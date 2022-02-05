@@ -1,0 +1,25 @@
+.sidebar-box {
+    width: 8%;
+    height: fit-content;
+    background-color: black;
+    position: sticky;
+    top: 0px;
+    align-self: flex-start;
+}
+
+.sidebar-ul {
+    /* background-color: red; */
+    padding-left: 0;
+    height: 97.6vh;
+    text-align: center;
+}
+
+.sidebar-ul>li {
+    width: 100%;
+    font-size: 2.2em;
+    padding-bottom: 1em;
+}
+
+.sidebar-ul>li:first-child {
+    margin-bottom: 1em;
+}

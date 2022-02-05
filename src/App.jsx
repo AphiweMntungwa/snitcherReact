@@ -1,10 +1,17 @@
-import './App.css';
-import Posts from './Components/Posts';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Sidebar from "./Components/Navbars/Sidebar/Sidebar";
+import Topbar from "./Components/Navbars/Topbar/Topbar";
+// import Posts from "./Components/Posts/Posts";
 
-function App() {
+function App({children}) {
   return (
     <div className="App">
-      <Posts></Posts>
+      <Topbar />
+      <main>
+        <Sidebar />
+        {children}
+      </main>
     </div>
   );
 }

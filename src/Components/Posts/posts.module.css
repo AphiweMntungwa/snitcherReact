@@ -1,0 +1,42 @@
+.listUl {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
+    height: 100%;
+    background-color: #281902e7;
+    overflow: auto;
+}
+
+.listItem {
+    width: 20vw;
+    height: 54vh;
+    overflow: hidden;
+}
+
+.imgSpanIdex {
+    width: fit-content;
+}
+
+.imgSpanIdex img {
+    width: 60px
+}
+
+.postList {
+    width: 80%;
+    flex-grow: 1;
+}
+
+.card {
+    border: 1px solid white;
+    color: white;
+    height: 100%;
+}
+
+@media (max-width:430px) {
+    .listUl {
+        flex-direction: column;
+    }
+}

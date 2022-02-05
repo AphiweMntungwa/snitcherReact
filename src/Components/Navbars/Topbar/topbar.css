@@ -1,0 +1,41 @@
+.snitcher-header {
+    /* width: 90vw; */
+}
+
+.snitcher-header>nav {
+    height: 5em;
+}
+
+.search-input {
+    width: unset;
+    border-radius: 19px;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+    padding-right: 1em;
+}
+
+.navbar-brand {
+    width: 5.5rem;
+    text-align: end;
+}
+
+.nav-item {
+    border: 1px solid white;
+    border-radius: 19px;
+    padding: 0 .6em;
+}
+
+.nav-item:last-child {
+    border: none;
+}
+
+.search-input,
+.nav-item {
+    margin-right: 0.6em;
+}
+
+.nav-link {
+    padding-block: 6px;
+}
