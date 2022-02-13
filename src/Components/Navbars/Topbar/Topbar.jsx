@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { SessionContext } from "../../../App";
 import Box from "../../Box/Box";
 import "./topbar.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-const Topbar = () => {
+const Topbar = ({ func }) => {
+  const session = useContext(SessionContext);
+  const logOut = () => {
+    axios.get("/logOut").then(() => {
+      func({ loggedIn: false });
+    });
+  };
+  let isDisabled = session.loggedIn
+    ? { pointerEvents: "none", opacity: ".25" }
+    : {};
+  let logOutButton = session.loggedIn
+    ? {}
+    : {
+        pointerEvents: "none",
+        opacity: ".25",
+      };
+
   return (
     <Box boxClass="snitcher-header">
       <nav className="navbar navbar-expand-lg navbar-black bg-black">
         <a className="navbar-brand" href="#">
-          Snitcher
+          &#x1D54A;&#x1D55F;&#x1D55A;&#x1D565;&#x1D554;&#x1D559;&#x1D556;&#x1D563;
         </a>
         <button
           className="navbar-toggler navbar-dark"
@@ -18,30 +37,38 @@ const Topbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {session.loggedIn && (
+            <div className="profile-bar">
+              <i class="fas fa-user"></i>
+              <span className="username">
+                {session.user[0] && session.user[0].username}
+              </span>
+            </div>
+          )}
           <input
-            className="form-control search-input" //mr-sm-2
+            className="form-control search-input"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
           <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
+            <li className="nav-item" style={isDisabled}>
+              <Link className="nav-link" to="/register" style={isDisabled}>
                 Sign Up
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
+            <li className="nav-item" style={isDisabled}>
+              <Link className="nav-link" to="/login" style={isDisabled}>
                 Log In
-              </a>
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" style={{ opacity: "0" }} href="#">
-                Disabled
+            <li className="nav-item" style={logOutButton}>
+              <a className="nav-link" style={logOutButton} onClick={logOut}>
+                Log out
               </a>
             </li>
           </ul>

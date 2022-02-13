@@ -2,16 +2,30 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from "./Components/Navbars/Sidebar/Sidebar";
 import Topbar from "./Components/Navbars/Topbar/Topbar";
-// import Posts from "./Components/Posts/Posts";
+import axios from "axios";
+import { useEffect, useState, createContext } from "react";
 
-function App({children}) {
+export const SessionContext = createContext();
+
+function App({ children }) {
+  axios.defaults.withCredentials = true;
+  const [session, getSession] = useState("");
+
+  useEffect(() => {
+    axios.get("/login").then((response) => {
+      getSession(response.data);
+    });
+  }, []);
+
   return (
     <div className="App">
-      <Topbar />
-      <main>
-        <Sidebar />
-        {children}
-      </main>
+      <SessionContext.Provider value={session}>
+        <Topbar func={getSession} />
+        <main>
+          <Sidebar />
+          {children}
+        </main>
+      </SessionContext.Provider>
     </div>
   );
 }

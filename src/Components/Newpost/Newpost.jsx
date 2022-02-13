@@ -2,8 +2,10 @@ import Box from "../Box/Box";
 import axios from "axios";
 import "./newpost.css";
 import Youtube from "./Youtube";
+import { useState } from "react";
 
 const Newpost = () => {
+  const [count, setCount] = useState(0)
   const sendPost = () => {
     let arr = [];
     const text = document.querySelector("textarea").value;
@@ -30,10 +32,10 @@ const Newpost = () => {
             Post
           </button>
           <i className="fab fa-youtube"></i>
-          <span className="resNum">+0</span>
+          <span className="resNum">+{count}</span>
         </div>
       </Box>
-      <Youtube />
+      <Youtube fetchMe={setCount}/>
     </Box>
   );
 };

@@ -6,8 +6,8 @@ import './sidebar.css'
 const sideList = [
 { id: 0, title: "Posts", classIcon: "fas fa-home", toLink:'/' },
   { id: 1, title: "show", classIcon: "fab fa-galactic-republic", toLink:'/details' },
-  { id: 2, title: "New Post", classIcon: "fas fa-pen-nib",toLink:'/new'  },
-  { id: 3, title: "Users", classIcon: "fas fa-users",toLink:'/' },
+  { id: 2, title: "New Post", classIcon: "fas fa-pen",toLink:'/new'  },
+  { id: 3, title: "Users", classIcon: "fas fa-comments",toLink:'/' }, 
 ];
 const Sidebar = () => {
   return (

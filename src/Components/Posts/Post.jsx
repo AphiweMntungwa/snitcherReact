@@ -11,6 +11,7 @@ function Post({ element }) {
         ))}
       </span>
       <h6>{element.created}</h6>
+      <span className="card-footer">{element.author.username}</span>
     </div>
   );
 }

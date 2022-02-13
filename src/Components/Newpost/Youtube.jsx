@@ -3,7 +3,7 @@ import Box from "../Box/Box";
 import Result from "./Result";
 import axios from "axios";
 
-export default function Youtube() {
+export default function Youtube({fetchMe}) {
   const [searchParam, setParam] = useState("");
   const [data, setData] = useState([]);
   const [obj, setObj] = useState([]);
@@ -37,7 +37,7 @@ export default function Youtube() {
         </button>
       </span>
       <Box boxClass="youtube-search">
-        <Result list={data} />
+        <Result list={data} fetchMe={fetchMe} />
       </Box>
     </Box>
   );

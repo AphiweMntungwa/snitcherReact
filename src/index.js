@@ -8,6 +8,9 @@ import { createBrowserHistory } from "history";
 import Posts from "./Components/Posts/Posts";
 import Details from "./Components/Details/Details";
 import Newpost from "./Components/Newpost/Newpost";
+import Floater from "./Components/Floater/Floater";
+import Register from "./Components/User/Register/Register";
+import Login from "./Components/User/Login/Login";
 
 const history = createBrowserHistory();
 
@@ -34,7 +37,29 @@ ReactDOM.render(
         path="/new"
         element={
           <App>
-            <Newpost />
+            <Floater linkTo="/">
+              <Newpost />
+            </Floater>
+          </App>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <App>
+            <Floater linkTo="/">
+              <Register />
+            </Floater>
+          </App>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <App>
+            <Floater linkTo="/">
+              <Login />
+            </Floater>
           </App>
         }
       />

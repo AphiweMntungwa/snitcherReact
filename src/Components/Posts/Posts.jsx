@@ -16,7 +16,7 @@ function Posts() {
         setItem(posts);
       })
       .catch((e) => console.log("ERROR ON FETCH"));
-  });
+  }, []);
 
   return (
     <Box boxClass={styles.postList}>

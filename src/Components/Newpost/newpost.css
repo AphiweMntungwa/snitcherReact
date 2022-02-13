@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 69pc;
+    height: 40ch;
     padding-top: 1em;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .new-post .card:first-child {
-    height: 50%;
+    height: 80%;
     /* border-radius: 0 0 .7em .7em; */
 }
 
@@ -70,6 +71,7 @@ input[type=search]+button:active {
 .youtube-search {
     padding-inline: 1em;
     padding-block: .2em;
+    overflow: auto;
 }
 
 .youtube-card {

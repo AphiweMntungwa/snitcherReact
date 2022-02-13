@@ -17,7 +17,9 @@
 }
 
 .imgSpanIdex {
-    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .imgSpanIdex img {
@@ -33,6 +35,16 @@
     border: 1px solid white;
     color: white;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card p,
+span,
+h6 {
+    width: 100%;
 }
 
 @media (max-width:430px) {
