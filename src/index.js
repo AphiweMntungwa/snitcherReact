@@ -11,6 +11,7 @@ import Newpost from "./Components/Newpost/Newpost";
 import Floater from "./Components/Floater/Floater";
 import Register from "./Components/User/Register/Register";
 import Login from "./Components/User/Login/Login";
+import Comments from "./Components/Posts/Comments/Comments";
 
 const history = createBrowserHistory();
 
@@ -59,6 +60,16 @@ ReactDOM.render(
           <App>
             <Floater linkTo="/">
               <Login />
+            </Floater>
+          </App>
+        }
+      />
+      <Route
+        path="/comments"
+        element={
+          <App>
+            <Floater linkTo="/">
+              <Comments />
             </Floater>
           </App>
         }

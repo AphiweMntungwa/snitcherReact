@@ -5,7 +5,8 @@ import Youtube from "./Youtube";
 import { useState } from "react";
 
 const Newpost = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
   const sendPost = () => {
     let arr = [];
     const text = document.querySelector("textarea").value;
@@ -14,10 +15,13 @@ const Newpost = () => {
       check.checked && arr.push(check);
     }
     arr = arr.map((e) => e.value);
-    axios.post("/index", {
-      text,
-      arr,
-    });
+    axios
+      .post("/index", {
+        text,
+        arr,
+      })
+      .then((data) => console.log(data))
+      .catch((e) => console.log(e));
   };
 
   return (
@@ -35,7 +39,7 @@ const Newpost = () => {
           <span className="resNum">+{count}</span>
         </div>
       </Box>
-      <Youtube fetchMe={setCount}/>
+      <Youtube fetchMe={setCount} />
     </Box>
   );
 };

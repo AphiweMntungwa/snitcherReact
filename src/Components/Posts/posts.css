@@ -1,0 +1,11 @@
+.comment-icons {
+    width: 100%;
+}
+
+.comment-icons+h6 {
+    width: 100%;
+}
+
+.description+span {
+    width: 100%;
+}

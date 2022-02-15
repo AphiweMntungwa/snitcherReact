@@ -33,7 +33,7 @@ export default function Youtube({fetchMe}) {
           onChange={(e) => setParam(e.target.value)}
         />
         <button onClick={() => setSearch()}>
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </button>
       </span>
       <Box boxClass="youtube-search">

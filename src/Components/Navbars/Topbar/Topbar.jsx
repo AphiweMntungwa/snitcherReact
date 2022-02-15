@@ -43,7 +43,7 @@ const Topbar = ({ func }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {session.loggedIn && (
             <div className="profile-bar">
-              <i class="fas fa-user"></i>
+              <i className="fas fa-user"></i>
               <span className="username">
                 {session.user[0] && session.user[0].username}
               </span>
