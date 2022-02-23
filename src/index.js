@@ -27,14 +27,6 @@ ReactDOM.render(
         }
       />
       <Route
-        path="/details"
-        element={
-          <App>
-            <Details />
-          </App>
-        }
-      />
-      <Route
         path="/new"
         element={
           <App>
@@ -68,7 +60,7 @@ ReactDOM.render(
         path="/comments"
         element={
           <App>
-            <Floater linkTo="/">
+            <Floater linkTo="/" classId='comment-class'>
               <Comments />
             </Floater>
           </App>

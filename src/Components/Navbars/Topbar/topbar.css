@@ -66,3 +66,9 @@
     color: yellow;
     padding-inline: .2em;
 }
+
+.pro-img {
+    width: 2.3em;
+    height: 2.3em;
+    border-radius: 1.2em;
+}

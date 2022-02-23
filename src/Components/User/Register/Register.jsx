@@ -3,23 +3,6 @@ import "./register.css";
 // import axios from "axios";
 
 const Register = () => {
-  // const nameRef = useRef(null);
-  // const emailRef = useRef(null);
-  // const passwordRef = useRef(null);
-
-  // const register = async (e) => {
-  //   e.preventDefault();
-  //   await axios.post("/register", {
-  //       username: nameRef.current.value,
-  //       email: emailRef.current.value,
-  //       password: passwordRef.current.value,
-  //     })
-  //     .then(() => {
-  //       console.log('done');
-  //     })
-  //     .catch((e) => console.log(e));
-  // };
-
   return (
     <div className="registry col-8">
       <h1
@@ -28,7 +11,12 @@ const Register = () => {
       >
         Sign Up
       </h1>
-      <form action="/register" className="reg-form" method="post">
+      <form
+        action="/register"
+        className="reg-form"
+        method="post"
+        encType="multipart/form-data"
+      >
         <div className="div-profile">
           <input type="file" name="profileImage" />
         </div>
@@ -59,9 +47,7 @@ const Register = () => {
             required
           />
         </div>
-        <button className="btn btn-success">
-          Register
-        </button>
+        <button className="btn btn-success">Register</button>
       </form>
     </div>
   );

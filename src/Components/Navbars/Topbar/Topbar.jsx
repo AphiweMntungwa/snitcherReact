@@ -22,6 +22,10 @@ const Topbar = ({ func }) => {
         opacity: ".25",
       };
 
+  const thumbnail = () => {
+    return session.user[0].photo.url.replace("/upload", "/upload/w_100/h_100");
+  };
+
   return (
     <Box boxClass="snitcher-header">
       <nav className="navbar navbar-expand-lg navbar-black bg-black">
@@ -43,7 +47,11 @@ const Topbar = ({ func }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {session.loggedIn && (
             <div className="profile-bar">
-              <i className="fas fa-user"></i>
+              {session.user[0].photo ? (
+                <img src={thumbnail()} alt="" className="pro-img" />
+              ) : (
+                <i className="fas fa-user"></i>
+              )}
               <span className="username">
                 {session.user[0] && session.user[0].username}
               </span>

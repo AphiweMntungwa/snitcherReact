@@ -3,14 +3,35 @@ import styles from "./posts.module.css";
 import Post from "./Post";
 import Box from "../Box/Box";
 import axios from "axios";
+
 let arr = "";
+export let globe = arr;
 
 function Posts(props) {
   const [items, setItem] = useState([]);
 
+  arr = localStorage.getItem("array");
+
   const setId = (e) => {
     arr = e.target.id;
+    if (typeof Storage !== "undefined") {
+      localStorage.setItem("array", arr);
+    } else {
+      console.log(`Sorry! No Web Storage support`);
+    }
+    globe = arr;
     return e.target.id;
+  };
+
+  const deletePost = (id) => {
+    console.log(`/index/${id}`);
+    axios
+      .delete(`/index/${id}`)
+      .then((res) => {
+        console.log(res);
+        setItem(res.data.list);
+      })
+      .catch((e) => console.log("oh boy", e));
   };
 
   useEffect(() => {
@@ -32,7 +53,17 @@ function Posts(props) {
         {(props.comment ? items.filter((el) => el._id === arr) : items).map(
           (el) => (
             <li className={styles.listItem} key={el._id}>
-              <Post element={el} setId={setId} />
+              <Post
+                element={el}
+                setId={setId}
+                comment={props.comment}
+                deletePost={deletePost}
+                tube={props.tube}
+                tuber={props.tuber}
+                count={props.count}
+                setFrame={props.setFrame}
+                setItem={setItem}
+              />
             </li>
           )
         )}

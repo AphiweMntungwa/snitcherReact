@@ -20,10 +20,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    overflow: auto;
+    max-height: 7em;
 }
 
 .imgSpanIdex img {
-    width: 60px
+    width: 49px;
+    height: 39px;
+    border-radius: 0.3em;
+    padding-bottom: 2px;
 }
 
 .postList {
@@ -45,7 +50,7 @@
     width: 100%;
 }
 
-@media (max-width:430px) {
+@media (max-width: 430px) {
     .listUl {
         flex-direction: column;
     }
