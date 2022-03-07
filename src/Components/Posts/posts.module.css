@@ -6,7 +6,6 @@
     list-style-type: none;
     padding-left: 0;
     height: 100%;
-    background-color: #281902e7;
     overflow: auto;
 }
 
@@ -14,6 +13,26 @@
     width: 20vw;
     height: 54vh;
     overflow: hidden;
+    background-color: #281902e7;
+}
+
+@media (max-width:991px) {
+    .listItem {
+        width: 30vw;
+        height: 71vh;
+    }
+}
+
+@media (max-width:600px) {
+    .listItem {
+        width: 55vw;
+    }
+}
+
+@media (max-width:314px) {
+    .listItem {
+        width: 85vw;
+    }
 }
 
 .imgSpanIdex {

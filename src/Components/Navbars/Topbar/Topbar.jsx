@@ -32,6 +32,19 @@ const Topbar = ({ func }) => {
         <a className="navbar-brand" href="#">
           &#x1D54A;&#x1D55F;&#x1D55A;&#x1D565;&#x1D554;&#x1D559;&#x1D556;&#x1D563;
         </a>
+        {session.loggedIn && (
+          <div className="profile-bar">
+            {session.user[0].photo ? (
+              <img src={thumbnail()} alt="" className="pro-img" />
+            ) : (
+              <i className="fas fa-user"></i>
+            )}
+            <span className="username">
+              {session.user[0] && session.user[0].username}
+            </span>
+          </div>
+        )}
+
         <button
           className="navbar-toggler navbar-dark"
           type="button"
@@ -43,20 +56,7 @@ const Topbar = ({ func }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          {session.loggedIn && (
-            <div className="profile-bar">
-              {session.user[0].photo ? (
-                <img src={thumbnail()} alt="" className="pro-img" />
-              ) : (
-                <i className="fas fa-user"></i>
-              )}
-              <span className="username">
-                {session.user[0] && session.user[0].username}
-              </span>
-            </div>
-          )}
           <input
             className="form-control search-input"
             type="search"

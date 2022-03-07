@@ -9,6 +9,7 @@ export let globe = arr;
 
 function Posts(props) {
   const [items, setItem] = useState([]);
+  const [newvote, callVote] = useState(false);
 
   arr = localStorage.getItem("array");
 
@@ -45,7 +46,7 @@ function Posts(props) {
         setItem(posts);
       })
       .catch((e) => console.log("ERROR ON FETCH"));
-  }, []);
+  }, [newvote]);
 
   const show = (
     <Box boxClass={styles.postList}>
@@ -63,6 +64,8 @@ function Posts(props) {
                 count={props.count}
                 setFrame={props.setFrame}
                 setItem={setItem}
+                newvote={newvote}
+                callVote={callVote}
               />
             </li>
           )

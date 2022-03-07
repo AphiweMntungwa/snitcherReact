@@ -24,3 +24,17 @@
 .cast svg {
     fill: wheat;
 }
+
+.likeSpan {
+    color: blue;
+    text-shadow: 2px 2px 4px blue;
+    border: 1px solid #556b2f1c;
+}
+
+box-icon[name='message-rounded-add'] {
+    fill: yellow;
+}
+
+box-icon[name='message-rounded-add']:hover {
+    fill: blueviolet;
+}

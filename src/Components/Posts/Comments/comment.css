@@ -22,6 +22,12 @@ iframe {
     height: 100%;
 }
 
+
+/* .youtube-card {
+    height: 56vh;
+    width: 44% !important;
+} */
+
 .comment-class>div>div:first-child>ul div {
     border: none;
 }
@@ -58,6 +64,10 @@ iframe {
     display: flex;
 }
 
+.comment-content textarea {
+    border-radius: 0;
+}
+
 .comment-pencil {
     margin-left: 10em;
 }
@@ -71,18 +81,48 @@ iframe {
     height: 5vh;
     color: rgb(38, 38, 49);
     padding-block: 0;
-}
-
-.buttons button:first-child {
-    border-bottom-left-radius: unset;
-    border-bottom-right-radius: unset;
-}
-
-.buttons button:last-child {
-    border-top-left-radius: unset;
-    border-top-right-radius: unset;
+    border-radius: 0;
 }
 
 .comText {
-    width: 80%;
+    width: 70%;
+}
+
+.like-system {
+    width: 3em;
+    display: flex;
+}
+
+.like-system box-icon {
+    fill: unset;
+    display: inline;
+}
+
+.like-system box-icon:hover {
+    fill: blue;
+}
+
+@media (max-width:991px) {
+    .comment-class>div {
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .comment-class>div>div:first-child {
+        width: 50%;
+        height: 40vh;
+    }
+    .comment-content {
+        width: 40% !important;
+    }
+    .comText {
+        width: 55%;
+    }
+    .buttons {
+        font-size: .2em;
+    }
+    .buttons button {
+        font-size: 2.5em;
+    }
 }

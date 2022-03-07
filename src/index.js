@@ -12,6 +12,8 @@ import Floater from "./Components/Floater/Floater";
 import Register from "./Components/User/Register/Register";
 import Login from "./Components/User/Login/Login";
 import Comments from "./Components/Posts/Comments/Comments";
+import Chat from "./Components/Chat/Chat";
+import Connect from "./Components/Chat/Connect"
 
 const history = createBrowserHistory();
 
@@ -25,44 +27,60 @@ ReactDOM.render(
             <Posts />
           </App>
         }
-      />
+      />{" "}
       <Route
         path="/new"
         element={
           <App>
             <Floater linkTo="/">
               <Newpost />
-            </Floater>
+            </Floater>{" "}
           </App>
         }
-      />
+      />{" "}
       <Route
         path="/register"
         element={
           <App>
             <Floater linkTo="/">
               <Register />
-            </Floater>
+            </Floater>{" "}
           </App>
         }
-      />
+      />{" "}
       <Route
         path="/login"
         element={
           <App>
             <Floater linkTo="/">
               <Login />
-            </Floater>
+            </Floater>{" "}
           </App>
         }
-      />
+      />{" "}
       <Route
         path="/comments"
         element={
           <App>
-            <Floater linkTo="/" classId='comment-class'>
+            <Floater linkTo="/" classId="comment-class">
               <Comments />
-            </Floater>
+            </Floater>{" "}
+          </App>
+        }
+      />{" "}
+      <Route
+        path="/chat"
+        element={
+          <App>
+            <Chat />
+          </App>
+        }
+      />{" "}
+      <Route
+        path="/chatbox"
+        element={
+          <App>
+            <Connect />
           </App>
         }
       />

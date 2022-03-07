@@ -20,7 +20,7 @@ const Newpost = () => {
         text,
         arr,
       })
-      .then((data) => console.log(data))
+      .then((res) => console.table(res))
       .catch((e) => console.log(e));
   };
 

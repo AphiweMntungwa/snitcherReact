@@ -9,7 +9,6 @@ const Sideitem = ({ liProp, classUL }) => {
           <li key={el.id}>
             <Link to={el.toLink}>
               <i className={el.classIcon}></i>
-              {/* <span> {el.title} </span> */}
             </Link>
           </li>
         );

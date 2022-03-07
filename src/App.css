@@ -1,5 +1,5 @@
 .App {
-    /* text-align: center; */
+    overflow-x: hidden;
     height: fit-content;
     display: flex;
     flex-direction: column;

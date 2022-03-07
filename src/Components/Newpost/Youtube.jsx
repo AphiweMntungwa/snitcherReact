@@ -28,6 +28,7 @@ export default function Youtube({fetchMe}) {
     <Box boxClass="card youtube-card">
       <span className="card-header">
         <input
+        className="youtube-search-field"
           type="search"
           value={searchParam}
           onChange={(e) => setParam(e.target.value)}

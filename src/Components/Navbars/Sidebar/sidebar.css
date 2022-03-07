@@ -23,3 +23,27 @@
 .sidebar-ul>li:first-child {
     margin-bottom: 1em;
 }
+
+@media (max-width:991px) {
+    .sidebar-box {
+        position: fixed;
+        top: 89vh;
+        width: 100%;
+        height: 11%;
+    }
+    .sidebar-ul {
+        padding-left: 0;
+        height: 100%;
+        text-align: center;
+        display: flex;
+    }
+    .search-input {
+        display: none;
+    }
+}
+
+@media (max-width:610px) {
+    .sidebar-ul>li {
+        font-size: 1.8em;
+    }
+}

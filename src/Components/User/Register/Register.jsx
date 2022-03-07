@@ -1,6 +1,5 @@
 import React from "react";
 import "./register.css";
-// import axios from "axios";
 
 const Register = () => {
   return (
@@ -18,7 +17,7 @@ const Register = () => {
         encType="multipart/form-data"
       >
         <div className="div-profile">
-          <input type="file" name="profileImage" />
+          <input type="file" name="profileImage"/>
         </div>
         <div className="mb-3">
           <input
