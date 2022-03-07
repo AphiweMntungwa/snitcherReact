@@ -5,7 +5,6 @@ import { globe } from "../Posts";
 import "./comment.css";
 import Youtube from "../../Newpost/Youtube";
 import { SessionContext } from "../../../App";
-import { server } from "../../../App";
 
 function Comments() {
   const [comments, showComments] = useState([]);
@@ -74,7 +73,7 @@ function Comments() {
         : { dislike: true };
 
     axios
-      .post(`http://localhost:8080/index/${id}/comments/vote`, { ...cname })
+      .post(`https://snitcherapp.herokuapp.com/index/${id}/comments/vote`, { ...cname })
       .then(() => {
         callVote(!newvote);
       })

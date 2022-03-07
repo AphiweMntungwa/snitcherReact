@@ -9,9 +9,9 @@ function Connect() {
   const [refresh, fetchRefresh] = useState(false);
 
   const session = useContext(SessionContext);
-  useEffect(() => {
+  useEffect(() => {                                           //http://localhost:8080
     axios
-      .get(`http://localhost:8080/messages/${session.user[0]._id}/${receiver}`)
+      .get(`https://snitcherapp.herokuapp.com/messages/${session.user[0]._id}/${receiver}`)
       .then((res) => {
         const arr = [];
         res.data.messages.forEach((el) => {
@@ -33,7 +33,7 @@ function Connect() {
 
     axios
       .post(
-        `http://localhost:8080/messages/${session.user[0]._id}/${receiver}`,
+        `https://snitcherapp.herokuapp.com/messages/${session.user[0]._id}/${receiver}`,
         {
           text: message,
         }
