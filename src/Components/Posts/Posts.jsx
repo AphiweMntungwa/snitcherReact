@@ -25,18 +25,16 @@ function Posts(props) {
   };
 
   const deletePost = (id) => {
-    console.log(`/index/${id}`);
     axios
-      .delete(`/index/${id}`)
+      .delete(`https://snitcher-server.herokuapp.com/index/${id}`)
       .then((res) => {
-        console.log(res);
         setItem(res.data.list);
       })
       .catch((e) => console.log("oh boy", e));
   };
 
   useEffect(() => {
-    axios(`/index`)
+    axios(`https://snitcher-server.herokuapp.com/index`)
       .then((response) => {
         const { list } = response.data;
         const posts = [];
