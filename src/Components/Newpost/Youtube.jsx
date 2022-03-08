@@ -14,7 +14,7 @@ export default function Youtube({fetchMe}) {
 
   const setSearch = async () => {
     try {
-      const response = await axios.post("/search", { searchParam });
+      const response = await axios.post("https://snitcher-server.herokuapp.com/search", { searchParam });
       let res = response.data.items
         ? response.data.items
         : ["somethin's wrong"];

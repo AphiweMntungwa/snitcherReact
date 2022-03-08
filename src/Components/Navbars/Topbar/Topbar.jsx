@@ -8,7 +8,7 @@ import axios from "axios";
 const Topbar = ({ func }) => {
   const session = useContext(SessionContext);
   const logOut = () => {
-    axios.get("/logOut").then(() => {
+    axios.get("https://snitcher-server.herokuapp.com/logOut").then(() => {
       func({ loggedIn: false });
     });
   };

@@ -5,7 +5,7 @@ const Login = () => {
   return (
       <div className="">
         <h1 className="login-header">Log In</h1>
-        <form action="/login" className="cs-validate" method="post">
+        <form action="https://snitcher-server.herokuapp.com/login" className="cs-validate" method="post">
           <div className="mb-3">
             <input
               type="text"

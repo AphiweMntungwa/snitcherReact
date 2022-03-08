@@ -12,7 +12,7 @@ function App({ children }) {
   const [session, getSession] = useState("");
 
   useEffect(() => {
-    axios.get("/login").then((response) => {
+    axios.get("https://snitcher-server.herokuapp.com/login").then((response) => {
       getSession(response.data);
     });
   }, []);
