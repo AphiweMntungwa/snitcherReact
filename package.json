@@ -21,7 +21,7 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
-    "proxy": "https://snitcherapp.herokuapp.com/",
+    "proxy": "https://snitcher-server.herokuapp.com/",
     "eslintConfig": {
         "extends": [
             "react-app",

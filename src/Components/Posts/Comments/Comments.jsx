@@ -73,7 +73,7 @@ function Comments() {
         : { dislike: true };
 
     axios
-      .post(`https://snitcherapp.herokuapp.com/index/${id}/comments/vote`, { ...cname })
+      .post(`https://snitcher-server.herokuapp.com/index/${id}/comments/vote`, { ...cname })
       .then(() => {
         callVote(!newvote);
       })
